@@ -6,6 +6,8 @@ import UserManager from "./network/user-manager";
 import LobbiesManager from "./network/lobbies-manager";
 import Lobby from "./components/Lobby";
 
+const SERVER_ADDR = process.env.SERVER_ADDR || 'http://' + window.location.hostname + ':3000';
+
 const el = document.querySelector("#app");
 
 const Screens = {
@@ -39,7 +41,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    const socket = io("http://192.168.99.100:3000");
+    const socket = io(SERVER_ADDR);
 
     // connect | disconnect
     socket.on("connect", () => this.setState({ connected: true }));
