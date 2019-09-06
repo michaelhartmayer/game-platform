@@ -30,7 +30,16 @@ class App extends React.Component {
     },
     lobby: 0,
     lobbies: [],
-    serverPopulation: []
+    serverPopulation: [],
+    game: {
+      deck: {
+        totalCards: 0,
+        currentCards: 0
+      },
+      hand: [],
+      history: [],
+      players: []
+    }
   };
 
   handleJoinLobby = ({ lobby }) => {
@@ -157,7 +166,7 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <h1>POC Client</h1>
+          <h1>Game Platform: Client</h1>
           Welcome, <b>{user.alias}</b>#<i>{user.id}</i>
           <p>
             Connection: {connected ? "Online" : "Offline"} <br />
