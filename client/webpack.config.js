@@ -14,8 +14,14 @@ module.exports = {
 
   target: "web",
 
+  devtool: 'inline-source-map',
+
   module: {
     rules: [
+      {
+        test: /\.(jpg|png|gif|svg)$/,
+        use: 'file-loader'
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,

@@ -5,8 +5,10 @@ import io from "socket.io-client";
 import UserManager from "./network/user-manager";
 import LobbiesManager from "./network/lobbies-manager";
 import Lobby from "./components/Lobby";
+import Card from "./components/Card";
 
-const SERVER_ADDR = process.env.SERVER_ADDR || 'http://' + window.location.hostname + ':3000';
+const SERVER_ADDR =
+  process.env.SERVER_ADDR || "http://" + window.location.hostname + ":3000";
 
 const el = document.querySelector("#app");
 
@@ -165,8 +167,9 @@ class App extends React.Component {
 
     return (
       <div>
+        <Card visible />
         <div>
-          <h1>Game Platform: Client</h1>
+          <h1 className="type1">Game Platform: Client</h1>
           Welcome, <b>{user.alias}</b>#<i>{user.id}</i>
           <p>
             Connection: {connected ? "Online" : "Offline"} <br />

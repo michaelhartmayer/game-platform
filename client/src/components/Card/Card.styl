@@ -1,0 +1,68 @@
+.card
+  background: url('./images/sleeves/basic.jpg')
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  width: 200px
+  height: 300px
+  box-sizing: border-box
+  border-radius: 5px
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.1)
+  position: relative
+  left: auto
+  overflow: hidden;
+
+  &:hover
+    cursor: pointer
+
+  &.card-back
+    & *
+     display: none
+
+  &.card-view
+    background-color: white
+
+    for i in (1..6)
+      &.card-type-{i}
+        background-image: url('./images/art/' + i +'.jpg')
+
+    > .title
+      box-sizing: border-box
+      background: black
+      position: absolute
+      top: 5%
+      width: 100%
+      color: white
+      border-top: 3px solid rgba(255, 0, 0, 0.5)
+      box-shadow: 5px 5px rgba(0, 0, 0, 0.3)
+      padding: 5px
+    
+    > .description
+      box-sizing: border-box
+      position: absolute
+      background: rgba(200, 200, 110, 0.9)
+      color black
+      font-size: 0.8em
+      bottom: 5%
+      width: 90%
+      left: 5%
+      padding: 5px
+      height: 35%
+      line-height: 0.9em
+      border-radius: 3px
+
+      > .traits
+        list-style: inside square
+        margin: 0
+        padding: 0 0 10px        
+        
+        > li          
+          padding: 5px
+          line-height: 0.9em
+          font-weight: bold
+
+      > .flavor
+        font-style: italic
+        font-size: 0.8em
+        text-align: center
+        padding: 5px
